@@ -1,0 +1,10 @@
+<%= form_for(@present) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_field :content %>
+  </div>
+
+	<%= f.submit "List", class: "btn btn-large btn-primary" %>
+<% end %>

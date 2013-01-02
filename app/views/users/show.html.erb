@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+  </aside>
+
+  <div class="span8">
+		<% if @user.presents.empty? %>
+			<% if current_user?(@user) %>
+				<p>
+					Awwwww, you don't have any presents. <%= link_to 'Create', newpresent_path %> your first potential present.
+				</p>
+			<% else %>
+				<p>
+					How sad, this person doesn't have any presents.
+				</p>
+			<% end %>
+		<% else %>
+			<p>
+				<% @Presents = @user.presents %>
+				<%= render 'shared/list' %>
+			</p>
+			<p>
+				<%= link_to 'Add more presents!', newpresent_path %>
+			</p>
+	<% end %>
+	</div>
+</div>
+

@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<% @user = User.find_by_id(@present.user_id) %>
+
+<p>
+  <b>Content:</b>
+  <%= @present.content %>
+</p>
+
+<p>
+  <b>Listed by user:</b>
+  <%= @user.name %>
+</p>
+
+<% if current_user?(@user) %>
+	<%= link_to 'Edit', edit_present_path(@present) %> 
+<% end %>
