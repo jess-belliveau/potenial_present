@@ -3,13 +3,22 @@
 <% @user = User.find_by_id(@present.user_id) %>
 
 <p>
-  <b>Content:</b>
-  <%= @present.content %>
+  <b>Present:</b>
+  <%= link_to @present.content, @present.link, target: "_blank" %>
 </p>
 
 <p>
-  <b>Listed by user:</b>
-  <%= @user.name %>
+	<b>Costing:</b>
+	<% if @present.cost == nil %>
+		Unknown
+	<% else %>
+		<%= @present.cost %>
+	<% end %>
+</p>
+
+<p>
+  <b>Listed by:</b>
+  <%= link_to @user.name, user_path(@user.id) %>
 </p>
 
 <% if current_user?(@user) %>

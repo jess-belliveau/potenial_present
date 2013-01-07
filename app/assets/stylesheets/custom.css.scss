@@ -17,6 +17,7 @@ html {
 }
 
 body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	padding-top: 60px;
 }
 
@@ -38,7 +39,7 @@ textarea {
 
 /* typography */
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h4, h5, h6 {
 	line-height: 1;
 }
 
@@ -56,6 +57,16 @@ h2 {
 	text-align: center;
 	font-weight: normal;
 	color: $grayLight;
+}
+
+h3 {
+	margin: 10px 0;
+  font-family: inherit;
+	font-size: 24.5px;
+  font-weight: bold;
+  line-height: 40px;
+  color: inherit;
+  text-rendering: optimizelegibility;
 }
 
 p {
@@ -184,7 +195,7 @@ aside {
 
 input, textarea, select, .uneditable-input {
 	border: 1px solid #bbb;
-	width: 100%;
+	width: 40%;
 	padding: 10px;
 	height: auto;
 	margin-bottom: 15px;
@@ -248,5 +259,13 @@ aside {
 	textarea {
 		height: 100px;
 		margin-bottom: 5px;
+	}
+}
+
+/* Some custom hacks */
+
+.btn-primary {
+	&:visited {
+		color: #fff;
 	}
 }

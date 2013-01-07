@@ -1,9 +1,15 @@
-<%= form_for(@present) do |f| %>
+<%= form_for @present, html: { class: "form-horizontal" } do |f| %>
 	<%= render 'shared/error_messages', object: f.object %>
 
   <div class="field">
-    <%= f.label :content %><br />
+    <%= f.label :content, "Present name" %><br />
     <%= f.text_field :content %>
+
+    <%= f.label :cost, "Price" %><br />
+    <%= f.text_field :cost %>
+
+    <%= f.label :link, "Link to present" %><br />
+    <%= f.text_field :link %>
   </div>
 
 	<%= f.submit "List", class: "btn btn-large btn-primary" %>

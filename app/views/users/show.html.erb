@@ -28,9 +28,11 @@
 				<% @Presents = @user.presents %>
 				<%= render 'shared/list' %>
 			</p>
-			<p>
-				<%= link_to 'Add more presents!', newpresent_path %>
-			</p>
+			<% if current_user?(@user) %>
+				<p>
+					<%= link_to 'Add more presents!', newpresent_path %>
+				</p>
+			<% end %>
 	<% end %>
 	</div>
 </div>

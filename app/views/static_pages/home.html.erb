@@ -1,4 +1,14 @@
-<p><%= Present.count %> potenial presents between <%= User.count %> users.</p>
+<div class="jumbotron">
+	<h1>Indulge yourself.</h1>
 
-<p>Some potential presents:</p>
+<% if !signed_in? %>
+	<p class="lead">Birthday? Christmas? Wedding? Nice person? You need a potential present list! No more socks for you. Say goodbye to novelty t-shirts. Create a simple list of presents you potentially want. Be a little selfish and indulge yourself. Let people know what you want.</p>
+	<%= link_to "Indulge", signup_path, class: "btn btn-large btn-primary" %>
+<% end %>
+</div>
+
+<p>Feel free to browse other peoples lists<% if !signed_in? %> or you can <%= link_to "signup", signup_path %> and start your own<% end %>! Currently we have <%= Present.count %> potenial presents listed between <%= User.count %> users. These are the latest potential presents:</p>
+
 <%= render 'shared/list' %>
+
+<hr>

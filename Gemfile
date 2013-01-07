@@ -22,7 +22,10 @@ end
 gem 'jquery-rails'
 
 # Bootstrap stuff
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 2.2.2.0'
+
+# SimpleForm Gem
+gem 'simple_form'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
