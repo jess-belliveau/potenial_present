@@ -1,16 +1,10 @@
-<%= form_for @present, html: { class: "form-horizontal" } do |f| %>
+<%= simple_form_for @present, html: { class: "form-horizontal" } do |f| %>
 	<%= render 'shared/error_messages', object: f.object %>
 
-  <div class="field">
-    <%= f.label :content, "Present name" %><br />
-    <%= f.text_field :content %>
+	<%= f.input :content, label: 'Present name' %>
+	<%= f.input :cost, label: 'Price' %>
+	<%= f.input :link, label: 'Link to present' %>
+	<%= f.input :purchased, as: :boolean %>
 
-    <%= f.label :cost, "Price" %><br />
-    <%= f.text_field :cost %>
-
-    <%= f.label :link, "Link to present" %><br />
-    <%= f.text_field :link %>
-  </div>
-
-	<%= f.submit "List", class: "btn btn-large btn-primary" %>
+	<%= f.button :submit, "List", class: "btn btn-small" %>
 <% end %>

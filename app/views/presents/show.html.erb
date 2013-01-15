@@ -1,26 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+<h3><%= @present.content %></h3>
 <% @user = User.find_by_id(@present.user_id) %>
 
-<p>
-  <b>Present:</b>
-  <%= link_to @present.content, @present.link, target: "_blank" %>
-</p>
+<% if @present.purchased == "0" %>
+	<p>
+		<%= link_to @user.name, user_path(@user.id) %> wouldn't mind if someone bought them a <%= link_to @present.content, @present.link, target: "_blank" %>.<% if @present.cost == nil %> No idea how much it costs though :(. <% else %> It roughly costs $<%= @present.cost %> so why not! <% end %> 
+	</p>
+<% else %>
+		<%= link_to @user.name, user_path(@user.id) %> was kindly bought a <%= link_to @present.content, @present.link, target: "_blank" %>.<% if @present.cost == nil %> No idea how much it cost though :(. <% else %> Some kind person paid $<%= @present.cost %> for it! <% end %>
+<% end %>
 
 <p>
-	<b>Costing:</b>
-	<% if @present.cost == nil %>
-		Unknown
-	<% else %>
-		<%= @present.cost %>
+	<% if current_user?(@user) %>
+		<%= link_to 'Edit', edit_present_path(@present), class: "btn btn-mini" %> 
 	<% end %>
 </p>
-
-<p>
-  <b>Listed by:</b>
-  <%= link_to @user.name, user_path(@user.id) %>
-</p>
-
-<% if current_user?(@user) %>
-	<%= link_to 'Edit', edit_present_path(@present) %> 
-<% end %>

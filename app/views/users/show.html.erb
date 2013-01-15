@@ -24,15 +24,15 @@
 				</p>
 			<% end %>
 		<% else %>
-			<p>
+		<% if current_user?(@user) %>
+				<p>
+					<%= link_to 'Add another present!', newpresent_path %>
+				</p>
+			<% end %>
+		<p>
 				<% @Presents = @user.presents %>
 				<%= render 'shared/list' %>
 			</p>
-			<% if current_user?(@user) %>
-				<p>
-					<%= link_to 'Add more presents!', newpresent_path %>
-				</p>
-			<% end %>
 	<% end %>
 	</div>
 </div>
