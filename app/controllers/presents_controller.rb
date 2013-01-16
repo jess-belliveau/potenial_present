@@ -83,4 +83,10 @@ class PresentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+	private
+		def set_not_purchased
+			self.purchased = 0
+		end
+
 end

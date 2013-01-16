@@ -2,9 +2,9 @@
 	<%= render 'shared/error_messages', object: f.object %>
 
 	<%= f.input :content, label: 'Present name' %>
-	<%= f.input :cost, label: 'Price' %>
 	<%= f.input :link, label: 'Link to present' %>
-	<%= f.input :purchased, as: :boolean %>
+	<%= f.input :cost, label: 'Rough price', hint: 'No need for a $ symbol' %>
+	<%= f.hidden_field :purchased, value: '0' %> 
 
 	<%= f.button :submit, "List", class: "btn btn-small" %>
 <% end %>
