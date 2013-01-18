@@ -277,3 +277,78 @@ aside {
 .alert-success {
 	width: 60%
 }
+
+body {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+/* Custom container */
+.container-narrow {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  margin: 60px 0;
+  text-align: center;
+}
+
+.jumbotron h1 {
+  font-size: 72px;
+  line-height: 1;
+}
+
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 60px 0;
+}
+
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #ffffff;
+}
+
+/* Hidden details for each capsule*/
+div.details {
+	display: none;
+}
+
+/* Capsule to contain each list item */
+.capsule {
+	width: 60%;
+	padding: 8px 35px 8px 14px;
+	margin-bottom: 20px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	border: 1px solid #fbeed5;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.capsule#want {
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+	color: #3a87ad;
+}
+
+.capsule#have {
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+	color: #468847;
+}

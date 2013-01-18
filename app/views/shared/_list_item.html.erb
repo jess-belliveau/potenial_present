@@ -1,8 +1,14 @@
-<div class="alert <% if list_item.purchased == "1" %>alert-success<% else %>alert-info<% end %> span6 offset1">
+<div class="present span6 offset1 capsule" id="<% if list_item.purchased == "1" %>have<% else %>want<% end %>">
 	<ul id="<%= list_item.id %>">
 		<span class="content">
 			<% if list_item.purchased == "0" %>
-				<strong><%= link_to list_item.user.name, list_item.user %> would love a <%= link_to list_item.content, list_item %></strong><font color="#999"> - <%= time_ago_in_words(list_item.created_at) %> ago.</font>
+				<strong>
+					<% if current_user?(list_item.user) %>
+						<%= link_to "You", list_item.user %>
+					<% else %>
+						<%= link_to list_item.user.name, list_item.user %>
+					<% end %>
+						 would love a <%= link_to list_item.content, list_item %></strong><font color="#999"> - <%= time_ago_in_words(list_item.created_at) %> ago.</font>
 			<% else %>
 				<strong><%= link_to list_item.user.name, list_item.user %> received a <%= link_to list_item.content, list_item %></strong><font color="#999"> - <%= time_ago_in_words(list_item.updated_at) %> ago.</font>
 			<% end %>
@@ -13,5 +19,8 @@
 				</p>
 		  <% end %>
 	  </span>
+		<div class="details">
+			You can purchase it from <%= link_to "here", list_item.link, target: "_blank" %> for roughly $<%= list_item.cost %>.
+		</div>
 	</ul>
 </div>
