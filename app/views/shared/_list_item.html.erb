@@ -12,6 +12,7 @@
 			<% else %>
 				<strong><%= link_to list_item.user.name, list_item.user %> received a <%= link_to list_item.content, list_item %></strong><font color="#999"> - <%= time_ago_in_words(list_item.updated_at) %> ago.</font>
 			<% end %>
+			<b class="caret" id="pointDown"></b>
 			<% if current_user?(list_item.user) %>
 				<p>
 		 		<%= link_to "edit", edit_present_path(list_item), class: "btn btn-mini" %> 

@@ -352,3 +352,20 @@ div.details {
 	border-color: #d6e9c6;
 	color: #468847;
 }
+
+.caret#pointDown{
+	line-height: 11px;
+	margin-top: 7px;
+	border-top-color: #999999;
+	border-bottom-color: #999999;
+}
+
+.caret#pointUp {
+	border-bottom: 4px solid #000000;
+	border-top: 0;
+	content: "";
+	line-height: 11px;
+	margin-top: 7px;
+	border-top-color: #999999;
+	border-bottom-color: #999999;
+}
