@@ -21,9 +21,9 @@
 				<ul class="dropdown-menu">
 					<li>
 						<%= simple_form_for :session, url: sessions_path do |f| %>
-							<%= f.input :name, label: false, wrapper_html: { id: "nameInput" } %>
-							<%= f.input :password, label: false, wrapper_html: { id: "passInput" } %>
-						  <%= f.button :submit, "Sign in", class: "btn btn-mini" %>
+							<%= f.input :name, label: false, wrapper_html: { id: "nameInput", class: "signInDrop" } %>
+							<%= f.input :password, label: false, wrapper_html: { id: "passInput", class: "signInDrop" } %>
+						  <%= f.button :submit, "Sign in", class: "btn-small loginbtn" %>
 						<% end %>
 					</li>
 				</ul>

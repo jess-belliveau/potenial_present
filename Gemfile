@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '1.9.1'
 gem 'rails', '3.2.8'
 
 # Trying with mysql this time

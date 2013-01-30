@@ -14,8 +14,12 @@ class User < ActiveRecord::Base
 	before_save { self.name = self.name.slice(0,1).capitalize + self.name.slice(1..-1) }
   before_save :create_remember_token
 
-  private
+	def to_param
+		name
+	end
 
+
+  private
 	  def create_remember_token
 	    self.remember_token = SecureRandom.hex
 	  end
