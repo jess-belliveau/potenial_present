@@ -4,11 +4,8 @@
   <aside class="span4">
     <section>
       <h1>
-        <%= @user.name %>
+        <%= @user.name %> has <%= pluralize(@user.presents.count, "Link", "Links") %>
       </h1>
-    </section>
-    <section>
-      <%= render 'shared/stats' %>
     </section>
   </aside>
 
@@ -16,17 +13,17 @@
 		<% if @user.presents.empty? %>
 			<% if current_user?(@user) %>
 				<p>
-					Awwwww, you don't have any presents. <%= link_to 'Create', newpresent_path %> your first potential present.
+					Awwwww, you don't have any links. <%= link_to 'Create', newpresent_path %> your first link.
 				</p>
 			<% else %>
 				<p>
-					How sad, this person doesn't have any presents.
+					How sad, this person doesn't have any links.
 				</p>
 			<% end %>
 		<% else %>
 		<% if current_user?(@user) %>
 				<p>
-					<%= link_to 'Add another present!', newpresent_path %>
+					<%= link_to 'Add another link!', newpresent_path %>
 				</p>
 			<% end %>
 		<p>

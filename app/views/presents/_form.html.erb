@@ -1,8 +1,8 @@
 <%= simple_form_for @present, html: { class: "form-horizontal" } do |f| %>
 	<%= render 'shared/error_messages', object: f.object %>
 
-	<%= f.input :content, label: 'Present name' %>
-	<%= f.input :link, label: 'Link to present' %>
+	<%= f.input :content, label: 'Link name' %>
+	<%= f.input :link, label: 'Link' %>
 	<%= f.input :cost, label: 'Rough price', hint: 'No need for a $ symbol' %>
 	<%= f.hidden_field :purchased, value: '0' %> 
 
