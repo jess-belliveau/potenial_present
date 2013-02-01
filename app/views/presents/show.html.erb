@@ -5,10 +5,10 @@
 
 <% if @present.purchased == "0" %>
 	<p>
-		<%= link_to @user.name, user_path(@user.id) %> wouldn't mind if someone bought them a <%= link_to @present.content, @present.link, target: "_blank" %>.<% if @present.cost == nil %> No idea how much it costs though :(. <% else %> It roughly costs $<%= @present.cost %> so why not! <% end %> 
+		<%= link_to @user.name, user_path(@user.id) %> wouldn't mind if someone bought them <%= link_to @present.content, @present.link, target: "_blank" %>.<% if @present.cost == nil %> No idea how much it costs though :(. <% else %> It roughly costs $<%= @present.cost %> so why not! <% end %> 
 	</p>
 <% else %>
-		<%= link_to @user.name, user_path(@user.id) %> was kindly bought a <%= link_to @present.content, @present.link, target: "_blank" %>.<% if @present.cost == nil %> No idea how much it cost though :(. <% else %> Some kind person paid $<%= @present.cost %> for it! <% end %>
+		<%= link_to @user.name, user_path(@user.id) %> was kindly bought <%= link_to @present.content, @present.link, target: "_blank" %>.<% if @present.cost == nil %> No idea how much it cost though :(. <% else %> Some kind person paid $<%= @present.cost %> for it! <% end %>
 <% end %>
 
 <p>

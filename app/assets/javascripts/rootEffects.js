@@ -1,4 +1,10 @@
 $(document).ready(function(){
+	//Tooltips for gifts already ordered
+  $('.buy').tooltip({'placement':'right'});
+	$('.newOrder').tooltip({'placement':'right'});
+  $('.alreadyOrder').tooltip({'placement':'right'});
+	$('.linkBuy').tooltip({'placement':'bottom'});
+
 	//Couldn't decide on a good header so random h1 for home page
 	var randomNum = Math.ceil(Math.random()*5);
 
@@ -10,10 +16,10 @@ $(document).ready(function(){
       $('#randomHeader').html("Be selfish.");
       break;
     case 3:
-      $('#randomHeader').html("Buy something.");
+      $('#randomHeader').html("No more flannel pyjamas.");
       break;
     case 4:
-      $('#randomHeader').html("Give gifts.");
+      $('#randomHeader').html("Give gifts, make happy.");
       break;
     case 5:
       $('#randomHeader').html("Say no to socks.");
@@ -48,4 +54,5 @@ $(document).ready(function(){
     $(this).find('.details').slideUp();
     $(this).find('.caret').attr('id', 'pointDown');
 	});
+
 });

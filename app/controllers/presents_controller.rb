@@ -47,7 +47,7 @@ class PresentsController < ApplicationController
 
     respond_to do |format|
       if @present.save
-        format.html { redirect_to @present, notice: 'Present was successfully created.' }
+        format.html { redirect_to @present, notice: 'Link was successfully created.' }
         format.json { render json: @present, status: :created, location: @present }
       else
         format.html { render action: "new" }

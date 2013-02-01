@@ -11,7 +11,7 @@
 <% end %>
 
 <div class="span8">
-	<p>This is a real basic wish list site. Feel free to browse other peoples lists<% if !signed_in? %> or you can <%= link_to "signup", signup_path %> and start your own list<% end %>. Currently we have <%= Present.count %> links between <%= User.count %> users. </p>
+	<p>This is a real wish list site. Feel free to browse other peoples links<% if !signed_in? %> or you can <%= link_to "signup", signup_path %> and start your own link list<% end %>. Currently we have <%= Present.count %> links between <%= User.count %> users. </p>
 </div>
 
 <br />
