@@ -1,14 +1,21 @@
-<div class="present span6 offset1 capsule" id="<% if list_item.purchased == "1" %>have<% else %>want<% end %>">
+<% if list_item.content.length > 14 then
+	link_name = list_item.content[0..9]
+	link_name << "..."
+else
+	link_name = list_item.content
+end %>
+
+<div class="present span6 offset1 capsule" id="<% if list_item.purchased == 1 %>have<% else %>want<% end %>">
 	<ul id="<%= list_item.id %>">
 		<span class="content">
-			<% if list_item.purchased == "0" %>
+			<% if list_item.purchased == 0 %>
 				<strong>
 					<% if current_user?(list_item.user) %>
 						<%= link_to "You", list_item.user %>
 					<% else %>
 						<%= link_to list_item.user.name, list_item.user %>
 					<% end %>
-						 would like this: <%= link_to list_item.content, list_item %></strong><font color="#999"> - <%= time_ago_in_words(list_item.created_at) %> ago</font>
+						 would like this: <%= link_to link_name, list_item %></strong><font color="#999"> - <%= time_ago_in_words(list_item.created_at) %> ago</font>
 			<% else %>
 				<strong>
 					<% if current_user?(list_item.user) %>
@@ -16,12 +23,12 @@
           <% else %>
             <%= link_to list_item.user.name, list_item.user %>
           <% end %>
-						received this: <%= link_to list_item.content, list_item %></strong><font color="#999"> - <%= time_ago_in_words(list_item.updated_at) %> ago</font>
+						received this: <%= link_to link_name, list_item %></strong><font color="#999"> - <%= time_ago_in_words(list_item.updated_at) %> ago</font>
 			<% end %>
 			<b class="caret" id="pointDown"></b>
 	  </span>
 		<div class="details">
-			<% if list_item.purchased == "0" %>
+			<% if list_item.purchased == 0 %>
 				Purchase 
 			<% else %>
 				Purchased 

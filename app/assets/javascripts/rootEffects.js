@@ -37,6 +37,17 @@ $(document).ready(function(){
     $(this).attr('value', '');
   });
 
+	//Fresh capsule config
+	$('#linkNameInput').find('input').attr('value', 'link name');
+  $('#linkNameInput').find('input').focus(function(){
+    $(this).attr('value', '');
+  });
+
+  $('#linkInput').find('input').attr('value', 'link');
+  $('#linkInput').find('input').focus(function(){
+    $(this).attr('value', '');
+  });
+
 	//Hide the feature request text on click
 	$('.feature').click(function(){
 		$('.welcome').slideUp('1000');

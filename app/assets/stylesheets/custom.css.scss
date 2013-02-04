@@ -282,10 +282,15 @@ div.details {
 }
 
 .capsule#have {
-
 	background-color: #d9edf7;
 	border-color: #bce8f1;
 	color: #3a87ad;
+}
+
+.capsule#new {
+	color: #b94a48;
+	background-color: #f2dede;
+	border-color: #eed3d7;
 }
 
 /* Feedback request box */
