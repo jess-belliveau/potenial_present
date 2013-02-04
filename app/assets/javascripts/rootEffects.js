@@ -1,9 +1,7 @@
 $(document).ready(function(){
 	//Tooltips for gifts already ordered
-  $('.buy').tooltip({'placement':'right'});
-	$('.newOrder').tooltip({'placement':'right'});
-  $('.alreadyOrder').tooltip({'placement':'right'});
-	$('.linkBuy').tooltip({'placement':'bottom'});
+  $('.tip-info').tooltip({'placement':'right'});
+	$('.link-buy').tooltip({'placement':'bottom'});
 
 	//Couldn't decide on a good header so random h1 for home page
 	var randomNum = Math.ceil(Math.random()*5);
