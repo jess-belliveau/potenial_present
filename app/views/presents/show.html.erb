@@ -3,7 +3,7 @@
 <h3><%= @present.content %></h3>
 <% @user = User.find_by_id(@present.user_id) %>
 
-<% if @present.purchased == "0" %>
+<% if @present.purchased == 0 %>
 	<p>
 		<%= link_to @user.name, user_path(@user.id) %> wouldn't mind if someone bought them <%= link_to @present.content, @present.link, target: "_blank" %>.<% if @present.cost == nil %> No idea how much it costs though :(. <% else %> It roughly costs $<%= @present.cost %> so why not! <% end %> 
 	</p>

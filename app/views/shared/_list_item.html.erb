@@ -1,6 +1,7 @@
 <% if list_item.content.length > 14 then
 	link_name = list_item.content[0..9]
 	link_name << "..."
+	tool_tip_name = list_item.content
 else
 	link_name = list_item.content
 end %>
@@ -15,7 +16,7 @@ end %>
 					<% else %>
 						<%= link_to list_item.user.name, list_item.user %>
 					<% end %>
-						 would like this: <%= link_to link_name, list_item %></strong><font color="#999"> - <%= time_ago_in_words(list_item.created_at) %> ago</font>
+						 would like this: <%= link_to link_name, list_item, title: tool_tip_name, class: "long-name" %></strong><font color="#999"> - <%= time_ago_in_words(list_item.created_at) %> ago</font>
 			<% else %>
 				<strong>
 					<% if current_user?(list_item.user) %>

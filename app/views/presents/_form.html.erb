@@ -5,6 +5,7 @@
 	<%= f.input :link, label: 'Link', hint: 'Paste your link in here' %>
 	<%= f.input :cost, label: 'Rough price', hint: 'No need for a $ symbol' %>
 	<%= f.hidden_field :purchased, value: '0' %> 
+  <%= f.hidden_field :ordered, value: '0' %>
 
 	<%= f.button :submit, "List", class: "btn btn-small" %>
 <% end %>
