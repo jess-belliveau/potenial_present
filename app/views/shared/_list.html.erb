@@ -5,6 +5,7 @@
 			<%= form_for :present, action: 'new', url: presents_path do |f| %>
 				<strong>You would like this:</strong>
 				<%= f.text_field :content, id: "linkNameInput", class: "freshCapsule" %>
+				<strong> which can be found here:</strong>
 				<%= f.text_field :link, id: "linkInput", class: "freshCapsule" %>
         <%= f.hidden_field :purchased, value: '0' %>
 				<%= f.submit "List", class: "btn btn-mini" %>

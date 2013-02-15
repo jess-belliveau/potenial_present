@@ -35,7 +35,7 @@ end %>
 				Purchased 
 			<% end %>
 			
-			from <% if signed_in? %><%= link_to "here", list_item.link, target: "_blank" %><% else %><%= link_to "here", list_item.link, target: "_blank", class: "link-buy", title: "Signup to tell others you bought this" %><% end %> for roughly $<%= list_item.cost %>.
+			from <% if signed_in? %><%= link_to "here", list_item.link, target: "_blank" %><% else %><%= link_to "here", list_item.link, target: "_blank", class: "link-buy", title: "Signup to tell others you bought this" %><% end %> for <% if !list_item.cost.nil? %>roughly $<%= list_item.cost %><% else %>real monies<% end %>.
 
 			<%= render partial: 'shared/item_buttons', locals: { list_item: list_item} %>
 		</div>
