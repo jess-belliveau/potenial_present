@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find_by_name(params[:id])
+		@Presents = Present.all.reverse.take(20)
 
     respond_to do |format|
       format.html # show.html.erb

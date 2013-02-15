@@ -2,12 +2,12 @@
 <div class="present span6 offset1 capsule" id="new">
 	<ul id="new">
 		<span class="content">
-			<strong>You would like this:</strong>
-			<%= simple_form_for :presents, url: presents_path do |f| %>
-				<%= f.input :content, label: false, wrapper_html: { id: "linkNameInput", class: "freshCapsule" } %>
-				<%= f.input :link, label: false, wrapper_html: { id: "linkInput", class: "freshCapsule" } %>
-				<%= f.hidden_field :purchased, value: '0' %>
-				<%= f.button :submit, "List", class: "btn btn-small" %>
+			<%= form_for :present, action: 'new', url: presents_path do |f| %>
+				<strong>You would like this:</strong>
+				<%= f.text_field :content, id: "linkNameInput", class: "freshCapsule" %>
+				<%= f.text_field :link, id: "linkInput", class: "freshCapsule" %>
+        <%= f.hidden_field :purchased, value: '0' %>
+				<%= f.submit "List", class: "btn btn-mini" %>
 			<% end %>
 		</span>
 	</ul>

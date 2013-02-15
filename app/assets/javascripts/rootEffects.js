@@ -5,23 +5,20 @@ $(document).ready(function(){
   $('.long-name').tooltip({'placement':'right'});
 
 	//Couldn't decide on a good header so random h1 for home page
-	var randomNum = Math.ceil(Math.random()*5);
+	var randomNum = Math.ceil(Math.random()*4);
 
 	switch (randomNum) {
 		case 1:
 		  $('#randomHeader').html("Gift yourself.");
 			break;
 		case 2:
-      $('#randomHeader').html("Be selfish.");
+      $('#randomHeader').html("Say no to socks.");
       break;
     case 3:
       $('#randomHeader').html("No more flannel pyjamas.");
       break;
     case 4:
       $('#randomHeader').html("Give gifts, make happy.");
-      break;
-    case 5:
-      $('#randomHeader').html("Say no to socks.");
       break;
 		default:
 			$('#randomHeader').html("Potential presents.");
@@ -39,13 +36,13 @@ $(document).ready(function(){
   });
 
 	//Fresh capsule config
-	$('#linkNameInput').find('input').attr('value', 'link name');
-  $('#linkNameInput').find('input').focus(function(){
+	$('#linkNameInput').attr('value', 'link name');
+  $('#linkNameInput').focus(function(){
     $(this).attr('value', '');
   });
 
-  $('#linkInput').find('input').attr('value', 'link');
-  $('#linkInput').find('input').focus(function(){
+  $('#linkInput').attr('value', 'link');
+  $('#linkInput').focus(function(){
     $(this).attr('value', '');
   });
 
