@@ -2,7 +2,7 @@
 <div class="present span6 offset1 capsule" id="new">
 	<ul id="new">
 		<span class="content">
-			<%= form_for :present, action: 'new', url: presents_path do |f| %>
+			<%= form_for :present, action: 'new', url: presents_path, class: "test-form" do |f| %>
 				<strong>You would like this:</strong>
 				<%= f.text_field :content, id: "linkNameInput", class: "freshCapsule" %>
 				<strong> which can be found here:</strong>
