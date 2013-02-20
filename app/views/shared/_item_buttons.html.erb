@@ -9,8 +9,8 @@
 <% else %>
 	<% if list_item.ordered != 1 && list_item.purchased != 1 %>
 		<%= link_to raw('<i class="icon-envelope"></i>'), present_path(list_item, present: {ordered: 1}), method: 'put', class: "tip-info", title: "Mark this link ordered" %>
-	<% elsif list_item.purchased == "1" %>
-		<%= link_to raw('<i class="icon-exclamation-sign"></i>'), '#', class: "tip-info", title: "Link has already been purchased" %>
+	<% elsif list_item.purchased == 1 %>
+		<%= link_to raw('<i class="icon-gift"></i>'), '#', class: "tip-info", title: "Link already gifted" %>
 	<% else %>
 		<%= link_to raw('<i class="icon-warning-sign"></i>'), '#', class: "tip-info", title: "Link has already been ordered" %>
 	<% end %>
