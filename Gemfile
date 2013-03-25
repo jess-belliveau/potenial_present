@@ -19,7 +19,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# jQuery! How exciting!
 gem 'jquery-rails'
+
+#Font-Awesome- as the name suggests
+#gem 'font-awesome-rails'
 
 # Bootstrap stuff
 gem 'bootstrap-sass', '~> 2.2.2.0'
