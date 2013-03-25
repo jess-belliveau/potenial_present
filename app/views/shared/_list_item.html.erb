@@ -16,7 +16,7 @@ end %>
 					<% else %>
 						<%= link_to list_item.user.name, list_item.user %>
 					<% end %>
-						 would like this: <%= link_to link_name, list_item, title: tool_tip_name, class: "long-name" %></strong><font color="#999"> - <%= time_ago_in_words(list_item.created_at) %> ago</font>
+						 would like this: <%= link_to link_name, '#', title: tool_tip_name, class: "long-name" %></strong><font color="#999"> - <%= time_ago_in_words(list_item.created_at) %> ago</font>
 			<% else %>
 				<strong>
 					<% if current_user?(list_item.user) %>
@@ -24,19 +24,11 @@ end %>
           <% else %>
             <%= link_to list_item.user.name, list_item.user %>
           <% end %>
-						received this: <%= link_to link_name, list_item %></strong><font color="#999"> - <%= time_ago_in_words(list_item.updated_at) %> ago</font>
+						received this: <%= link_to link_name, '#' %></strong><font color="#999"> - <%= time_ago_in_words(list_item.updated_at) %> ago</font>
 			<% end %>
 			<b class="caret" id="pointDown"></b>
 	  </span>
 		<div class="details">
-			<% if list_item.purchased == 0 %>
-				Purchase 
-			<% else %>
-				Purchased 
-			<% end %>
-			
-			from <% if signed_in? %><%= link_to "here", list_item.link, target: "_blank" %><% else %><%= link_to "here", list_item.link, target: "_blank", class: "link-buy", title: "Signup to tell others you bought this" %><% end %> for <% if !list_item.cost.nil? %>roughly $<%= list_item.cost %><% else %>real monies<% end %>.
-
 			<%= render partial: 'shared/item_buttons', locals: { list_item: list_item} %>
 		</div>
 	</ul>
